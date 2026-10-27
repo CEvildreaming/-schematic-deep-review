@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:schematic-deep-review:project:1",
+  "title": "Schematic deep review evidence record",
+  "type": "object",
+  "required": ["project", "components", "sources", "calculations", "annotations"],
+  "properties": {
+    "project": {"type": "object", "required": ["name", "original_files"], "properties": {"name": {"type": "string"}, "original_files": {"type": "array", "items": {"type": "object", "required": ["file", "sha256"], "properties": {"file": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}}}}}},
+    "components": {"type": "array", "items": {"$ref": "#/$defs/component"}},
+    "sources": {"type": "array", "items": {"$ref": "#/$defs/source"}},
+    "calculations": {"type": "array", "items": {"$ref": "#/$defs/calculation"}},
+    "annotations": {"type": "array", "items": {"$ref": "#/$defs/annotation"}}
+  },
+  "$defs": {
+    "evidence": {"type": "object", "required": ["level", "claim"], "properties": {"level": {"enum": ["schematic", "datasheet", "reference", "calculated", "inferred", "unresolved", "measurement_required", "原图", "手册", "参考", "计算", "推断", "待核", "需实测"]}, "claim": {"type": "string"}, "source_id": {"type": ["string", "null"]}, "pdf_page": {"type": ["integer", "null"], "minimum": 1}, "printed_page": {"type": ["string", "null"]}, "section": {"type": ["string", "null"]}}},
+    "component": {
+      "type": "object",
+      "required": ["id", "file", "page", "ref", "unit", "value", "package", "manufacturer", "group", "pins", "related", "assembly", "sources", "status", "analysis"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1}, "file": {"type": "string", "minLength": 1}, "page": {"type": "integer", "minimum": 1}, "ref": {"type": "string", "minLength": 1}, "unit": {"type": "string"},
+        "value": {"type": "string"}, "part_number": {"type": ["string", "null"]}, "package": {"type": ["string", "null"]}, "manufacturer": {"type": ["string", "null"]}, "group": {"type": "string"},
+        "pins": {"type": "array", "items": {"type": "object", "required": ["pin", "net", "status"], "properties": {"pin": {"type": "string"}, "net": {"type": ["string", "null"]}, "status": {"enum": ["confirmed", "unresolved", "NC"]}}}},
+        "related": {"type": "array", "items": {"type": "string"}}, "assembly": {"enum": ["fitted", "DNP", "optional", "unknown"]}, "sources": {"type": "array", "items": {"type": "string"}}, "status": {"enum": ["verified", "partially_verified", "unresolved"]}, "analysis": {"type": "string", "minLength": 1}, "evidence": {"type": "array", "items": {"$ref": "#/$defs/evidence"}}, "requires_datasheet": {"type": "boolean"}
+      }
+    },
+    "source": {
+      "type": "object", "required": ["id", "model", "manufacturer", "version", "document_type", "status"],
+      "properties": {"id": {"type": "string"}, "model": {"type": "string"}, "manufacturer": {"type": ["string", "null"]}, "version": {"type": ["string", "null"]}, "document_type": {"type": "string"}, "title": {"type": "string"}, "document_number": {"type": ["string", "null"]}, "published_date": {"type": ["string", "null"]}, "url": {"type": ["string", "null"]}, "accessed_utc": {"type": "string"}, "status": {"enum": ["downloaded", "cached", "failed", "missing", "family_unverified"]}, "local_path": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}, "pages": {"type": "integer", "minimum": 1}, "applicability_review": {"type": "string"}},
+      "allOf": [{"if": {"properties": {"status": {"enum": ["downloaded", "cached"]}}}, "then": {"required": ["url", "local_path", "sha256", "pages", "applicability_review"]}}]
+    },
+    "calculation": {
+      "type": "object", "required": ["id", "kind", "inputs", "assumptions"],
+      "properties": {"id": {"type": "string"}, "kind": {"enum": ["rc", "divider", "led", "ldo", "hold_up", "energy", "inductor_slope", "crystal", "impedance", "pi", "l_match"]}, "inputs": {"type": "object", "additionalProperties": {"type": "number"}}, "assumptions": {"type": "array", "items": {"type": "string"}}, "formula": {"type": "string"}, "input_evidence": {"type": "array", "items": {"$ref": "#/$defs/evidence"}}, "results": {"type": "object"}}
+    },
+    "annotation": {
+      "type": "object", "required": ["id", "component_ids", "page", "text", "bbox", "font_size", "sources"],
+      "properties": {"id": {"type": "string"}, "component_ids": {"type": "array", "items": {"type": "string"}}, "page": {"type": "integer", "minimum": 1}, "text": {"type": "string", "minLength": 1}, "bbox": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "number"}}, "font_size": {"type": "number", "minimum": 5}, "font_file": {"type": "string"}, "sources": {"type": "array", "items": {"type": "string"}}, "layout_status": {"enum": ["planned", "screened", "visually_verified", "failed"]}}
+    }
+  }
+}

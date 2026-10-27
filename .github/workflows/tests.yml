@@ -1,0 +1,37 @@
+name: Tests
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        python: ['3.10', '3.12']
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+      - run: python -m pip install -r requirements-dev.txt
+      - name: Synthetic regression and installer tests
+        env:
+          PYTHONDONTWRITEBYTECODE: '1'
+          PYTHONUTF8: '1'
+        run: python -m unittest discover -s skills/schematic-deep-review/tests -v
+      - name: Standard-library command help
+        run: |
+          python -S install.py --help
+          python -S skills/schematic-deep-review/scripts/knowledge_search.py --help
+      - name: Public release scan
+        run: python tools/check_release.py
+      - name: Synthetic RC example
+        run: python examples/synthetic-rc/run.py
+      - name: Knowledge formulas and provenance checks
+        run: python skills/schematic-deep-review/knowledge/verify_examples.py

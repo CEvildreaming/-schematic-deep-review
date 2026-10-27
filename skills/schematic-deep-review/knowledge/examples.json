@@ -1,0 +1,353 @@
+{
+  "description": "Synthetic educational examples; SI base units unless a key explicitly states degrees C, ppm, or dimensionless. No board data.",
+  "cases": [
+    {
+      "id": "led-current",
+      "calculation": "led_resistor",
+      "document": "passives-and-rc.md",
+      "inputs_si": {
+        "supply_V": 3.3,
+        "led_V": 2,
+        "target_A": 0.005
+      },
+      "expected_si": {
+        "resistance_ohm": 260,
+        "power_W": 0.0065
+      },
+      "relative_tolerance": 1e-05
+    },
+    {
+      "id": "pull-current",
+      "calculation": "pulls",
+      "document": "passives-and-rc.md",
+      "inputs_si": {
+        "leakage_A": 2e-06,
+        "pull_ohm": 47000,
+        "supply_V": 3.3,
+        "low_pull_ohm": 10000
+      },
+      "expected_si": {
+        "leakage_drop_V": 0.094,
+        "low_current_A": 0.00033
+      },
+      "relative_tolerance": 1e-05
+    },
+    {
+      "id": "loaded-divider",
+      "calculation": "divider",
+      "document": "passives-and-rc.md",
+      "inputs_si": {
+        "top_ohm": 30000,
+        "bottom_ohm": 10000,
+        "load_ohm": 100000,
+        "input_V": 5
+      },
+      "expected_si": {
+        "unloaded_V": 1.25,
+        "divider_A": 0.000125,
+        "thevenin_ohm": 7500,
+        "loaded_V": 1.16279069767
+      },
+      "relative_tolerance": 1e-05
+    },
+    {
+      "id": "rc-time",
+      "calculation": "rc",
+      "document": "passives-and-rc.md",
+      "inputs_si": {
+        "R_ohm": 10000,
+        "C_F": 1e-07,
+        "fraction": 0.9
+      },
+      "expected_si": {
+        "tau_s": 0.001,
+        "cutoff_Hz": 159.154943,
+        "one_tau_fraction": 0.632120559,
+        "threshold_time_s": 0.002302585093
+      },
+      "relative_tolerance": 1e-05
+    },
+    {
+      "id": "inductor-currents",
+      "calculation": "inductor",
+      "document": "magnetics.md",
+      "inputs_si": {
+        "average_A": 1,
+        "ripple_pp_A": 0.4,
+        "DCR_ohm": 0.08
+      },
+      "expected_si": {
+        "peak_A": 1.2,
+        "rms_A": 1.006644592,
+        "copper_W": 0.08106666667
+      },
+      "relative_tolerance": 1e-05
+    },
+    {
+      "id": "isolated-lc",
+      "calculation": "lc",
+      "document": "magnetics.md",
+      "inputs_si": {
+        "L_H": 1e-05,
+        "C_F": 1e-09
+      },
+      "expected_si": {
+        "resonance_Hz": 1591549.4309
+      },
+      "relative_tolerance": 1e-05
+    },
+    {
+      "id": "bead-dc",
+      "calculation": "bead",
+      "document": "magnetics.md",
+      "inputs_si": {
+        "current_A": 0.6,
+        "DCR_ohm": 0.15
+      },
+      "expected_si": {
+        "drop_V": 0.09,
+        "loss_W": 0.054
+      },
+      "relative_tolerance": 1e-05
+    },
+    {
+      "id": "mosfet-gate",
+      "calculation": "mosfet",
+      "document": "transistor-switches.md",
+      "inputs_si": {
+        "gate_V": 0.2,
+        "source_V": 5,
+        "current_A": 0.8,
+        "Rds_ohm": 0.08,
+        "gate_charge_C": 8e-09,
+        "switch_Hz": 100000,
+        "gate_drive_A": 0.02
+      },
+      "expected_si": {
+        "Vgs_V": -4.8,
+        "conduction_W": 0.0512,
+        "average_gate_A": 0.0008,
+        "ideal_charge_time_s": 4e-07
+      },
+      "relative_tolerance": 1e-05
+    },
+    {
+      "id": "bjt-drive",
+      "calculation": "bjt",
+      "document": "transistor-switches.md",
+      "inputs_si": {
+        "collector_A": 0.02,
+        "forced_beta": 10,
+        "drive_V": 3.3,
+        "Vbe_V": 0.8
+      },
+      "expected_si": {
+        "base_A": 0.002,
+        "base_resistor_ohm": 1250
+      },
+      "relative_tolerance": 1e-05
+    },
+    {
+      "id": "ldo-thermal",
+      "calculation": "ldo",
+      "document": "power-paths-and-transients.md",
+      "inputs_si": {
+        "input_V": 5,
+        "output_V": 3.3,
+        "load1_A": 0.3,
+        "load2_A": 0.6,
+        "ambient_C": 50,
+        "design_limit_C": 110,
+        "theta_C_per_W": 100
+      },
+      "expected_si": {
+        "loss1_W": 0.51,
+        "loss2_W": 1.02,
+        "rise1_C": 51,
+        "rise2_C": 102,
+        "allowed_W": 0.6,
+        "thermal_current_A": 0.35294117647
+      },
+      "relative_tolerance": 1e-05
+    },
+    {
+      "id": "boost-power-budget",
+      "calculation": "converter_input",
+      "document": "power-paths-and-transients.md",
+      "inputs_si": {
+        "output_V": 5,
+        "output_A": 0.5,
+        "efficiency": 0.9,
+        "input_V": 3
+      },
+      "expected_si": {
+        "input_A": 0.92592592593
+      },
+      "relative_tolerance": 1e-05
+    },
+    {
+      "id": "buck-ripple",
+      "calculation": "buck",
+      "document": "power-paths-and-transients.md",
+      "inputs_si": {
+        "input_V": 12,
+        "output_V": 3.3,
+        "L_H": 1e-05,
+        "switch_Hz": 500000,
+        "output_A": 1
+      },
+      "expected_si": {
+        "duty": 0.275,
+        "ripple_pp_A": 0.4785,
+        "peak_A": 1.23925
+      },
+      "relative_tolerance": 1e-05
+    },
+    {
+      "id": "buck-rms",
+      "calculation": "buck_input_rms",
+      "document": "power-paths-and-transients.md",
+      "inputs_si": {
+        "output_A": 1,
+        "duty": 0.5
+      },
+      "expected_si": {
+        "rms_A": 0.5
+      },
+      "relative_tolerance": 1e-05
+    },
+    {
+      "id": "load-pulse",
+      "calculation": "transient",
+      "document": "power-paths-and-transients.md",
+      "inputs_si": {
+        "deficit_A": 0.25,
+        "duration_s": 0.0002,
+        "droop_V": 0.1,
+        "ESR_ohm": 0.02,
+        "long_duration_s": 0.002,
+        "small_C_F": 2.2e-05
+      },
+      "expected_si": {
+        "charge_only_C_F": 0.0005,
+        "ESR_drop_V": 0.005,
+        "ESR_budgeted_C_F": 0.00052631578947,
+        "long_pulse_C_F": 0.005,
+        "small_cap_time_s": 8.8e-06
+      },
+      "relative_tolerance": 1e-05
+    },
+    {
+      "id": "crystal-load",
+      "calculation": "crystal",
+      "document": "mcu-clocks-and-interfaces.md",
+      "inputs_si": {
+        "target_CL_F": 1e-11,
+        "stray_C_F": 2e-12,
+        "error_ppm": 20,
+        "day_s": 86400
+      },
+      "expected_si": {
+        "equal_leg_C_F": 1.6e-11,
+        "drift_s_per_day": 1.728
+      },
+      "relative_tolerance": 1e-05
+    },
+    {
+      "id": "reset-threshold",
+      "calculation": "rc",
+      "document": "mcu-clocks-and-interfaces.md",
+      "inputs_si": {
+        "R_ohm": 47000,
+        "C_F": 1e-07,
+        "fraction": 0.7
+      },
+      "expected_si": {
+        "tau_s": 0.0047,
+        "cutoff_Hz": 33.86275385,
+        "one_tau_fraction": 0.632120559,
+        "threshold_time_s": 0.00565867218
+      },
+      "relative_tolerance": 1e-05
+    },
+    {
+      "id": "i2c-range",
+      "calculation": "i2c",
+      "document": "mcu-clocks-and-interfaces.md",
+      "inputs_si": {
+        "pullup_V": 3.3,
+        "VOL_V": 0.4,
+        "sink_A": 0.003,
+        "bus_C_F": 1e-10,
+        "allowed_rise_s": 3e-07,
+        "chosen_pull_ohm": 2200
+      },
+      "expected_si": {
+        "minimum_pull_ohm": 966.6666667,
+        "maximum_pull_ohm": 3540.6585625,
+        "chosen_rise_s": 1.86406e-07,
+        "chosen_low_A": 0.001318181818
+      },
+      "relative_tolerance": 1e-05
+    },
+    {
+      "id": "adc-settling",
+      "calculation": "adc",
+      "document": "mcu-clocks-and-interfaces.md",
+      "inputs_si": {
+        "bits": 12,
+        "total_R_ohm": 10000,
+        "sample_C_F": 1e-11
+      },
+      "expected_si": {
+        "acquisition_s": 9.0109133473e-07
+      },
+      "relative_tolerance": 1e-05
+    },
+    {
+      "id": "opamp-gain-errors",
+      "calculation": "opamp",
+      "document": "operational-amplifiers.md",
+      "inputs_si": {
+        "feedback_ohm": 100000,
+        "input_ohm": 10000,
+        "noninverting_input_V": 0.2,
+        "reference_V": 1.65,
+        "inverting_input_V": 1.75,
+        "GBW_Hz": 1000000.0,
+        "offset_input_V": 5e-05,
+        "bias_A": 2e-08,
+        "source_ohm": 100000,
+        "signal_Hz": 20000,
+        "output_peak_V": 2
+      },
+      "expected_si": {
+        "noninverting_gain": 11,
+        "noninverting_output_V": 2.2,
+        "inverting_gain": -10,
+        "inverting_output_V": 0.65,
+        "bandwidth_Hz": 90909.090909,
+        "offset_output_V": 0.00055,
+        "bias_error_V": 0.002,
+        "slew_V_per_s": 251327.412287
+      },
+      "relative_tolerance": 1e-05
+    },
+    {
+      "id": "integrator-step",
+      "calculation": "integrator",
+      "document": "operational-amplifiers.md",
+      "inputs_si": {
+        "input_difference_V": 0.1,
+        "input_R_ohm": 100000,
+        "feedback_C_F": 1e-08,
+        "duration_s": 0.001
+      },
+      "expected_si": {
+        "slope_V_per_s": -100,
+        "change_V": -0.1
+      },
+      "relative_tolerance": 1e-05
+    }
+  ]
+}

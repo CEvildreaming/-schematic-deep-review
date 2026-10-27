@@ -1,0 +1,901 @@
+{
+  "scope": "Synthetic arithmetic, dimensional identities, selected independent invariants, local links, and text-only package hygiene. No hardware validation or live URL health check.",
+  "case_count": 20,
+  "numeric_result_count": 61,
+  "check_count": 192,
+  "passed_count": 192,
+  "failed_count": 0,
+  "all_passed": true,
+  "results": [
+    {
+      "check": "unique-case:led-current",
+      "passed": true
+    },
+    {
+      "check": "case-document:led-current",
+      "passed": true
+    },
+    {
+      "check": "result-keys:led-current",
+      "passed": true
+    },
+    {
+      "check": "numeric:led-current:resistance_ohm",
+      "passed": true,
+      "actual": 259.99999999999994,
+      "expected": 260
+    },
+    {
+      "check": "numeric:led-current:power_W",
+      "passed": true,
+      "actual": 0.006499999999999999,
+      "expected": 0.0065
+    },
+    {
+      "check": "unique-case:pull-current",
+      "passed": true
+    },
+    {
+      "check": "case-document:pull-current",
+      "passed": true
+    },
+    {
+      "check": "result-keys:pull-current",
+      "passed": true
+    },
+    {
+      "check": "numeric:pull-current:leakage_drop_V",
+      "passed": true,
+      "actual": 0.094,
+      "expected": 0.094
+    },
+    {
+      "check": "numeric:pull-current:low_current_A",
+      "passed": true,
+      "actual": 0.00033,
+      "expected": 0.00033
+    },
+    {
+      "check": "unique-case:loaded-divider",
+      "passed": true
+    },
+    {
+      "check": "case-document:loaded-divider",
+      "passed": true
+    },
+    {
+      "check": "result-keys:loaded-divider",
+      "passed": true
+    },
+    {
+      "check": "numeric:loaded-divider:unloaded_V",
+      "passed": true,
+      "actual": 1.25,
+      "expected": 1.25
+    },
+    {
+      "check": "numeric:loaded-divider:divider_A",
+      "passed": true,
+      "actual": 0.000125,
+      "expected": 0.000125
+    },
+    {
+      "check": "numeric:loaded-divider:thevenin_ohm",
+      "passed": true,
+      "actual": 7500.0,
+      "expected": 7500
+    },
+    {
+      "check": "numeric:loaded-divider:loaded_V",
+      "passed": true,
+      "actual": 1.1627906976744184,
+      "expected": 1.16279069767
+    },
+    {
+      "check": "unique-case:rc-time",
+      "passed": true
+    },
+    {
+      "check": "case-document:rc-time",
+      "passed": true
+    },
+    {
+      "check": "result-keys:rc-time",
+      "passed": true
+    },
+    {
+      "check": "numeric:rc-time:tau_s",
+      "passed": true,
+      "actual": 0.001,
+      "expected": 0.001
+    },
+    {
+      "check": "numeric:rc-time:cutoff_Hz",
+      "passed": true,
+      "actual": 159.15494309189532,
+      "expected": 159.154943
+    },
+    {
+      "check": "numeric:rc-time:one_tau_fraction",
+      "passed": true,
+      "actual": 0.6321205588285577,
+      "expected": 0.632120559
+    },
+    {
+      "check": "numeric:rc-time:threshold_time_s",
+      "passed": true,
+      "actual": 0.002302585092994046,
+      "expected": 0.002302585093
+    },
+    {
+      "check": "unique-case:inductor-currents",
+      "passed": true
+    },
+    {
+      "check": "case-document:inductor-currents",
+      "passed": true
+    },
+    {
+      "check": "result-keys:inductor-currents",
+      "passed": true
+    },
+    {
+      "check": "numeric:inductor-currents:peak_A",
+      "passed": true,
+      "actual": 1.2,
+      "expected": 1.2
+    },
+    {
+      "check": "numeric:inductor-currents:rms_A",
+      "passed": true,
+      "actual": 1.0066445913694333,
+      "expected": 1.006644592
+    },
+    {
+      "check": "numeric:inductor-currents:copper_W",
+      "passed": true,
+      "actual": 0.08106666666666668,
+      "expected": 0.08106666667
+    },
+    {
+      "check": "unique-case:isolated-lc",
+      "passed": true
+    },
+    {
+      "check": "case-document:isolated-lc",
+      "passed": true
+    },
+    {
+      "check": "result-keys:isolated-lc",
+      "passed": true
+    },
+    {
+      "check": "numeric:isolated-lc:resonance_Hz",
+      "passed": true,
+      "actual": 1591549.4309189534,
+      "expected": 1591549.4309
+    },
+    {
+      "check": "unique-case:bead-dc",
+      "passed": true
+    },
+    {
+      "check": "case-document:bead-dc",
+      "passed": true
+    },
+    {
+      "check": "result-keys:bead-dc",
+      "passed": true
+    },
+    {
+      "check": "numeric:bead-dc:drop_V",
+      "passed": true,
+      "actual": 0.09,
+      "expected": 0.09
+    },
+    {
+      "check": "numeric:bead-dc:loss_W",
+      "passed": true,
+      "actual": 0.054,
+      "expected": 0.054
+    },
+    {
+      "check": "unique-case:mosfet-gate",
+      "passed": true
+    },
+    {
+      "check": "case-document:mosfet-gate",
+      "passed": true
+    },
+    {
+      "check": "result-keys:mosfet-gate",
+      "passed": true
+    },
+    {
+      "check": "numeric:mosfet-gate:Vgs_V",
+      "passed": true,
+      "actual": -4.8,
+      "expected": -4.8
+    },
+    {
+      "check": "numeric:mosfet-gate:conduction_W",
+      "passed": true,
+      "actual": 0.05120000000000001,
+      "expected": 0.0512
+    },
+    {
+      "check": "numeric:mosfet-gate:average_gate_A",
+      "passed": true,
+      "actual": 0.0008,
+      "expected": 0.0008
+    },
+    {
+      "check": "numeric:mosfet-gate:ideal_charge_time_s",
+      "passed": true,
+      "actual": 4.0000000000000003e-07,
+      "expected": 4e-07
+    },
+    {
+      "check": "unique-case:bjt-drive",
+      "passed": true
+    },
+    {
+      "check": "case-document:bjt-drive",
+      "passed": true
+    },
+    {
+      "check": "result-keys:bjt-drive",
+      "passed": true
+    },
+    {
+      "check": "numeric:bjt-drive:base_A",
+      "passed": true,
+      "actual": 0.002,
+      "expected": 0.002
+    },
+    {
+      "check": "numeric:bjt-drive:base_resistor_ohm",
+      "passed": true,
+      "actual": 1250.0,
+      "expected": 1250
+    },
+    {
+      "check": "unique-case:ldo-thermal",
+      "passed": true
+    },
+    {
+      "check": "case-document:ldo-thermal",
+      "passed": true
+    },
+    {
+      "check": "result-keys:ldo-thermal",
+      "passed": true
+    },
+    {
+      "check": "numeric:ldo-thermal:loss1_W",
+      "passed": true,
+      "actual": 0.51,
+      "expected": 0.51
+    },
+    {
+      "check": "numeric:ldo-thermal:loss2_W",
+      "passed": true,
+      "actual": 1.02,
+      "expected": 1.02
+    },
+    {
+      "check": "numeric:ldo-thermal:rise1_C",
+      "passed": true,
+      "actual": 51.0,
+      "expected": 51
+    },
+    {
+      "check": "numeric:ldo-thermal:rise2_C",
+      "passed": true,
+      "actual": 102.0,
+      "expected": 102
+    },
+    {
+      "check": "numeric:ldo-thermal:allowed_W",
+      "passed": true,
+      "actual": 0.6,
+      "expected": 0.6
+    },
+    {
+      "check": "numeric:ldo-thermal:thermal_current_A",
+      "passed": true,
+      "actual": 0.3529411764705882,
+      "expected": 0.35294117647
+    },
+    {
+      "check": "unique-case:boost-power-budget",
+      "passed": true
+    },
+    {
+      "check": "case-document:boost-power-budget",
+      "passed": true
+    },
+    {
+      "check": "result-keys:boost-power-budget",
+      "passed": true
+    },
+    {
+      "check": "numeric:boost-power-budget:input_A",
+      "passed": true,
+      "actual": 0.9259259259259258,
+      "expected": 0.92592592593
+    },
+    {
+      "check": "unique-case:buck-ripple",
+      "passed": true
+    },
+    {
+      "check": "case-document:buck-ripple",
+      "passed": true
+    },
+    {
+      "check": "result-keys:buck-ripple",
+      "passed": true
+    },
+    {
+      "check": "numeric:buck-ripple:duty",
+      "passed": true,
+      "actual": 0.27499999999999997,
+      "expected": 0.275
+    },
+    {
+      "check": "numeric:buck-ripple:ripple_pp_A",
+      "passed": true,
+      "actual": 0.4784999999999999,
+      "expected": 0.4785
+    },
+    {
+      "check": "numeric:buck-ripple:peak_A",
+      "passed": true,
+      "actual": 1.23925,
+      "expected": 1.23925
+    },
+    {
+      "check": "unique-case:buck-rms",
+      "passed": true
+    },
+    {
+      "check": "case-document:buck-rms",
+      "passed": true
+    },
+    {
+      "check": "result-keys:buck-rms",
+      "passed": true
+    },
+    {
+      "check": "numeric:buck-rms:rms_A",
+      "passed": true,
+      "actual": 0.5,
+      "expected": 0.5
+    },
+    {
+      "check": "unique-case:load-pulse",
+      "passed": true
+    },
+    {
+      "check": "case-document:load-pulse",
+      "passed": true
+    },
+    {
+      "check": "result-keys:load-pulse",
+      "passed": true
+    },
+    {
+      "check": "numeric:load-pulse:charge_only_C_F",
+      "passed": true,
+      "actual": 0.0005,
+      "expected": 0.0005
+    },
+    {
+      "check": "numeric:load-pulse:ESR_drop_V",
+      "passed": true,
+      "actual": 0.005,
+      "expected": 0.005
+    },
+    {
+      "check": "numeric:load-pulse:ESR_budgeted_C_F",
+      "passed": true,
+      "actual": 0.0005263157894736842,
+      "expected": 0.00052631578947
+    },
+    {
+      "check": "numeric:load-pulse:long_pulse_C_F",
+      "passed": true,
+      "actual": 0.005,
+      "expected": 0.005
+    },
+    {
+      "check": "numeric:load-pulse:small_cap_time_s",
+      "passed": true,
+      "actual": 8.8e-06,
+      "expected": 8.8e-06
+    },
+    {
+      "check": "unique-case:crystal-load",
+      "passed": true
+    },
+    {
+      "check": "case-document:crystal-load",
+      "passed": true
+    },
+    {
+      "check": "result-keys:crystal-load",
+      "passed": true
+    },
+    {
+      "check": "numeric:crystal-load:equal_leg_C_F",
+      "passed": true,
+      "actual": 1.6e-11,
+      "expected": 1.6e-11
+    },
+    {
+      "check": "numeric:crystal-load:drift_s_per_day",
+      "passed": true,
+      "actual": 1.7279999999999998,
+      "expected": 1.728
+    },
+    {
+      "check": "unique-case:reset-threshold",
+      "passed": true
+    },
+    {
+      "check": "case-document:reset-threshold",
+      "passed": true
+    },
+    {
+      "check": "result-keys:reset-threshold",
+      "passed": true
+    },
+    {
+      "check": "numeric:reset-threshold:tau_s",
+      "passed": true,
+      "actual": 0.0047,
+      "expected": 0.0047
+    },
+    {
+      "check": "numeric:reset-threshold:cutoff_Hz",
+      "passed": true,
+      "actual": 33.862753849339434,
+      "expected": 33.86275385
+    },
+    {
+      "check": "numeric:reset-threshold:one_tau_fraction",
+      "passed": true,
+      "actual": 0.6321205588285577,
+      "expected": 0.632120559
+    },
+    {
+      "check": "numeric:reset-threshold:threshold_time_s",
+      "passed": true,
+      "actual": 0.005658672180331899,
+      "expected": 0.00565867218
+    },
+    {
+      "check": "unique-case:i2c-range",
+      "passed": true
+    },
+    {
+      "check": "case-document:i2c-range",
+      "passed": true
+    },
+    {
+      "check": "result-keys:i2c-range",
+      "passed": true
+    },
+    {
+      "check": "numeric:i2c-range:minimum_pull_ohm",
+      "passed": true,
+      "actual": 966.6666666666666,
+      "expected": 966.6666667
+    },
+    {
+      "check": "numeric:i2c-range:maximum_pull_ohm",
+      "passed": true,
+      "actual": 3540.658562492623,
+      "expected": 3540.6585625
+    },
+    {
+      "check": "numeric:i2c-range:chosen_rise_s",
+      "passed": true,
+      "actual": 1.8640600000000003e-07,
+      "expected": 1.86406e-07
+    },
+    {
+      "check": "numeric:i2c-range:chosen_low_A",
+      "passed": true,
+      "actual": 0.0013181818181818182,
+      "expected": 0.001318181818
+    },
+    {
+      "check": "unique-case:adc-settling",
+      "passed": true
+    },
+    {
+      "check": "case-document:adc-settling",
+      "passed": true
+    },
+    {
+      "check": "result-keys:adc-settling",
+      "passed": true
+    },
+    {
+      "check": "numeric:adc-settling:acquisition_s",
+      "passed": true,
+      "actual": 9.010913347279287e-07,
+      "expected": 9.0109133473e-07
+    },
+    {
+      "check": "unique-case:opamp-gain-errors",
+      "passed": true
+    },
+    {
+      "check": "case-document:opamp-gain-errors",
+      "passed": true
+    },
+    {
+      "check": "result-keys:opamp-gain-errors",
+      "passed": true
+    },
+    {
+      "check": "numeric:opamp-gain-errors:noninverting_gain",
+      "passed": true,
+      "actual": 11.0,
+      "expected": 11
+    },
+    {
+      "check": "numeric:opamp-gain-errors:noninverting_output_V",
+      "passed": true,
+      "actual": 2.2,
+      "expected": 2.2
+    },
+    {
+      "check": "numeric:opamp-gain-errors:inverting_gain",
+      "passed": true,
+      "actual": -10.0,
+      "expected": -10
+    },
+    {
+      "check": "numeric:opamp-gain-errors:inverting_output_V",
+      "passed": true,
+      "actual": 0.649999999999999,
+      "expected": 0.65
+    },
+    {
+      "check": "numeric:opamp-gain-errors:bandwidth_Hz",
+      "passed": true,
+      "actual": 90909.09090909091,
+      "expected": 90909.090909
+    },
+    {
+      "check": "numeric:opamp-gain-errors:offset_output_V",
+      "passed": true,
+      "actual": 0.00055,
+      "expected": 0.00055
+    },
+    {
+      "check": "numeric:opamp-gain-errors:bias_error_V",
+      "passed": true,
+      "actual": 0.002,
+      "expected": 0.002
+    },
+    {
+      "check": "numeric:opamp-gain-errors:slew_V_per_s",
+      "passed": true,
+      "actual": 251327.41228718346,
+      "expected": 251327.412287
+    },
+    {
+      "check": "unique-case:integrator-step",
+      "passed": true
+    },
+    {
+      "check": "case-document:integrator-step",
+      "passed": true
+    },
+    {
+      "check": "result-keys:integrator-step",
+      "passed": true
+    },
+    {
+      "check": "numeric:integrator-step:slope_V_per_s",
+      "passed": true,
+      "actual": -100.0,
+      "expected": -100
+    },
+    {
+      "check": "numeric:integrator-step:change_V",
+      "passed": true,
+      "actual": -0.1,
+      "expected": -0.1
+    },
+    {
+      "check": "invariant:loaded-divider-KCL",
+      "passed": true
+    },
+    {
+      "check": "invariant:RC-threshold",
+      "passed": true
+    },
+    {
+      "check": "invariant:buck-capacitor-zero-mean:0.2",
+      "passed": true
+    },
+    {
+      "check": "invariant:buck-capacitor-rms:0.2",
+      "passed": true
+    },
+    {
+      "check": "invariant:buck-capacitor-zero-mean:0.5",
+      "passed": true
+    },
+    {
+      "check": "invariant:buck-capacitor-rms:0.5",
+      "passed": true
+    },
+    {
+      "check": "invariant:buck-capacitor-zero-mean:0.8",
+      "passed": true
+    },
+    {
+      "check": "invariant:buck-capacitor-rms:0.8",
+      "passed": true
+    },
+    {
+      "check": "invariant:transient-charge-integration",
+      "passed": true
+    },
+    {
+      "check": "invariant:ADC-half-LSB",
+      "passed": true
+    },
+    {
+      "check": "invariant:buck-volt-second-balance",
+      "passed": true
+    },
+    {
+      "check": "dimension:R*C=time",
+      "passed": true
+    },
+    {
+      "check": "dimension:I*time/V=capacitance",
+      "passed": true
+    },
+    {
+      "check": "dimension:L*di/dt=voltage",
+      "passed": true
+    },
+    {
+      "check": "dimension:I^2*R=power",
+      "passed": true
+    },
+    {
+      "check": "dimension:C*V^2=energy",
+      "passed": true
+    },
+    {
+      "check": "dimension:L*I^2=energy",
+      "passed": true
+    },
+    {
+      "check": "dimension:V/(L*f)=current",
+      "passed": true
+    },
+    {
+      "check": "dimension:sqrt(L*C)=time",
+      "passed": true
+    },
+    {
+      "check": "dimension:C*V/I=time",
+      "passed": true
+    },
+    {
+      "check": "dimension:f*V=slew-rate",
+      "passed": true
+    },
+    {
+      "check": "documents:required-topics",
+      "passed": true
+    },
+    {
+      "check": "document:nonempty:index.md",
+      "passed": true
+    },
+    {
+      "check": "document:no-local-drive-path:index.md",
+      "passed": true
+    },
+    {
+      "check": "document:no-extraction-marker:index.md",
+      "passed": true
+    },
+    {
+      "check": "link:local:index.md:passives-and-rc.md",
+      "passed": true
+    },
+    {
+      "check": "link:local:index.md:magnetics.md",
+      "passed": true
+    },
+    {
+      "check": "link:local:index.md:transistor-switches.md",
+      "passed": true
+    },
+    {
+      "check": "link:local:index.md:power-paths-and-transients.md",
+      "passed": true
+    },
+    {
+      "check": "link:local:index.md:mcu-clocks-and-interfaces.md",
+      "passed": true
+    },
+    {
+      "check": "link:local:index.md:operational-amplifiers.md",
+      "passed": true
+    },
+    {
+      "check": "link:local:index.md:provenance.md",
+      "passed": true
+    },
+    {
+      "check": "link:local:index.md:examples.json",
+      "passed": true
+    },
+    {
+      "check": "link:local:index.md:verify_examples.py",
+      "passed": true
+    },
+    {
+      "check": "document:nonempty:magnetics.md",
+      "passed": true
+    },
+    {
+      "check": "document:no-local-drive-path:magnetics.md",
+      "passed": true
+    },
+    {
+      "check": "document:no-extraction-marker:magnetics.md",
+      "passed": true
+    },
+    {
+      "check": "link:local:magnetics.md:provenance.md",
+      "passed": true
+    },
+    {
+      "check": "document:nonempty:mcu-clocks-and-interfaces.md",
+      "passed": true
+    },
+    {
+      "check": "document:no-local-drive-path:mcu-clocks-and-interfaces.md",
+      "passed": true
+    },
+    {
+      "check": "document:no-extraction-marker:mcu-clocks-and-interfaces.md",
+      "passed": true
+    },
+    {
+      "check": "link:local:mcu-clocks-and-interfaces.md:provenance.md",
+      "passed": true
+    },
+    {
+      "check": "link:official-host:mcu-clocks-and-interfaces.md:www.nxp.com",
+      "passed": true
+    },
+    {
+      "check": "document:nonempty:operational-amplifiers.md",
+      "passed": true
+    },
+    {
+      "check": "document:no-local-drive-path:operational-amplifiers.md",
+      "passed": true
+    },
+    {
+      "check": "document:no-extraction-marker:operational-amplifiers.md",
+      "passed": true
+    },
+    {
+      "check": "link:local:operational-amplifiers.md:provenance.md",
+      "passed": true
+    },
+    {
+      "check": "link:official-host:operational-amplifiers.md:www.ti.com",
+      "passed": true
+    },
+    {
+      "check": "link:official-host:operational-amplifiers.md:www.ti.com",
+      "passed": true
+    },
+    {
+      "check": "document:nonempty:passives-and-rc.md",
+      "passed": true
+    },
+    {
+      "check": "document:no-local-drive-path:passives-and-rc.md",
+      "passed": true
+    },
+    {
+      "check": "document:no-extraction-marker:passives-and-rc.md",
+      "passed": true
+    },
+    {
+      "check": "link:local:passives-and-rc.md:provenance.md",
+      "passed": true
+    },
+    {
+      "check": "link:official-host:passives-and-rc.md:www.analog.com",
+      "passed": true
+    },
+    {
+      "check": "link:local:passives-and-rc.md:power-paths-and-transients.md",
+      "passed": true
+    },
+    {
+      "check": "document:nonempty:power-paths-and-transients.md",
+      "passed": true
+    },
+    {
+      "check": "document:no-local-drive-path:power-paths-and-transients.md",
+      "passed": true
+    },
+    {
+      "check": "document:no-extraction-marker:power-paths-and-transients.md",
+      "passed": true
+    },
+    {
+      "check": "link:local:power-paths-and-transients.md:provenance.md",
+      "passed": true
+    },
+    {
+      "check": "link:official-host:power-paths-and-transients.md:www.ti.com",
+      "passed": true
+    },
+    {
+      "check": "link:official-host:power-paths-and-transients.md:www.ti.com",
+      "passed": true
+    },
+    {
+      "check": "document:nonempty:provenance.md",
+      "passed": true
+    },
+    {
+      "check": "document:no-local-drive-path:provenance.md",
+      "passed": true
+    },
+    {
+      "check": "document:no-extraction-marker:provenance.md",
+      "passed": true
+    },
+    {
+      "check": "document:nonempty:transistor-switches.md",
+      "passed": true
+    },
+    {
+      "check": "document:no-local-drive-path:transistor-switches.md",
+      "passed": true
+    },
+    {
+      "check": "document:no-extraction-marker:transistor-switches.md",
+      "passed": true
+    },
+    {
+      "check": "link:local:transistor-switches.md:provenance.md",
+      "passed": true
+    },
+    {
+      "check": "package:text-files-only",
+      "passed": true
+    },
+    {
+      "check": "package:no-source-images-or-PDFs",
+      "passed": true
+    },
+    {
+      "check": "link:local:index.md:validation.json",
+      "passed": true
+    }
+  ]
+}

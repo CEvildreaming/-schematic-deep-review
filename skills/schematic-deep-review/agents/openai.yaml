@@ -1,0 +1,4 @@
+interface:
+  display_name: "Schematic Deep Review"
+  short_description: "Explain components, power paths, and circuit interactions"
+  default_prompt: "Use $schematic-deep-review to explain my original schematic, collect matching datasheets, and create readable annotated PDFs with verified calculations."

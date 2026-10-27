@@ -1,0 +1,9 @@
+{
+  "notice": "These are synthetic teaching assumptions, not measured board results or verified component selections. All inputs use SI units.",
+  "calculations": [
+    {"id": "teaching-rc", "kind": "rc", "inputs": {"r_ohm": 10000, "c_f": 0.000001, "threshold_fraction": 0.7}, "assumptions": ["Synthetic example: ideal step from 0 V; threshold 0.7 VDD; capacitor sees a Thevenin resistance of 10 kohm."]},
+    {"id": "teaching-divider", "kind": "divider", "inputs": {"vin_v": 4.2, "r_top_ohm": 100000, "r_bottom_ohm": 100000}, "assumptions": ["Synthetic example: unloaded divider; neglect input leakage."]},
+    {"id": "teaching-l-match", "kind": "l_match", "inputs": {"source_ohm": 50, "load_ohm": 200, "frequency_hz": 100000000}, "assumptions": ["Synthetic example: series L followed by shunt C across a 200 ohm load; matching applies only at 100 MHz."]},
+    {"id": "teaching-pi-filter", "kind": "pi", "inputs": {"frequency_hz": 100000000, "cin_f": 0.000000000031830988618379, "cout_f": 0.000000000031830988618379, "l_h": 0.000000159154943091895, "load_ohm": 50, "z0_ohm": 50}, "assumptions": ["Synthetic example: third-order Butterworth C-L-C low-pass; 50 ohm terminations; 100 MHz cutoff. This calculation checks input impedance only; return loss cannot replace S21 verification."]}
+  ]
+}
